@@ -1,58 +1,103 @@
 import {Module} from "@nuxt/types";
 
-type DataCacheKey = string | {
-  key: string,
-  secret?: string,
+
+export type ICmsColors = Record<string, string>
+
+export type ICmsEnv = Record<string, any>
+
+export interface ICmsConfig {
+  colors: ICmsColors;
+  env: ICmsEnv;
 }
 
-interface DataCache {
-  getAll(): Promise<Data | null>;
+export interface ICmsMeta {
+  hid: string;
+  name: string;
+  content: string;
+}
 
-  fetch<Data = any>(key: DataCacheKey, dataSource: any, seconds?: number): Promise<Data | null>;
+export interface ICmsSeo {
+  title: string;
+  meta: ICmsMeta[];
+}
 
-  set(key: DataCacheKey, data: any, seconds?: number): Promise<boolean>;
+export type ICmsStyles = Record<string, any>
 
-  get<Data = any>(key: DataCacheKey): Promise<Data | null>;
+export interface ICmsCss {
+  styles: ICmsStyles;
+}
 
-  remove(key: DataCacheKey): Promise<boolean>;
+export type ICmsData = Record<string, any>
+
+export interface ICmsStructure {
+  component: string;
+  data: ICmsData;
+  css: ICmsCss;
+}
+
+export interface ICmsPageConfig {
+  layout: string;
+  middleware: Record<string, Function> | string;
+  seo: ICmsSeo;
+}
+
+export interface ICmsPage {
+  detectBy: string[];
+  url: string;
+  config: ICmsPageConfig;
+  css: ICmsConfig;
+  structure: ICmsStructure[];
+}
+
+export interface ICms {
+  config: Config;
+  pages: Record<string, ICmsPage>;
+}
+
+export interface CmsEngine {
+  viewer: any,
+  middlewares: Record<string, Function>
+  getCmsConfig: (...params: any) => Promise<ICms>
 }
 
 interface ModuleOptions {
-  disabled?: boolean;
-  apiEndpoint?: string;
+  route?: {
+    name: string,
+    path: string
+  };
 }
 
 type ICacheModule = Module<ModuleOptions>
 
 declare module '@nuxt/vue-app' {
   interface Context {
-    $cmsEngine: DataCache
+    $cmsEngine: CmsEngine
   }
 
   interface NuxtAppOptions {
-    $cmsEngine: DataCache
+    $cmsEngine: CmsEngine
   }
 }
 
 // Nuxt 2.9+
 declare module '@nuxt/types' {
   interface Context {
-    $cmsEngine: DataCache
+    $cmsEngine: CmsEngine
   }
 
   interface NuxtAppOptions {
-    $cmsEngine: DataCache
+    $cmsEngine: CmsEngine
   }
 }
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $cmsEngine: DataCache
+    $cmsEngine: CmsEngine
   }
 }
 
 declare module 'vuex/types/index' {
   interface Store<S> {
-    $cmsEngine: DataCache
+    $cmsEngine: CmsEngine
   }
 }
