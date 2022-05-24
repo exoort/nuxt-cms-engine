@@ -1,0 +1,91 @@
+{
+  "config": {
+    "colors": {
+      "black": "#000000"
+    },
+    "env": {
+      "PARAM_1": "lorem",
+      "PARAM_2": "ipsum"
+    }
+  },
+  "pages": {
+    "/test/:id": {
+      "detectBy": ["test"],
+      "url": "/test/:id",
+      "config": {
+        "layout": "testLayout",
+        "middleware": ["testMiddleware"],
+        "seo": {
+          "title": "Test page",
+          "meta": [
+            {
+              "hid": "description",
+              "name": "description",
+              "content": "My custom description"
+            }
+          ]
+        }
+      },
+      "css": {
+        "styles": {
+          "paddingTop": "30px",
+          "paddingBottom": "30px"
+        }
+      },
+      "structure": [
+        {
+          "component": "PreviewSection",
+          "data": {
+            "backgroundImage": "https://gorilasoftware.com.br/wp-content/uploads/2021/11/Lorem-Ipsum-768x492-1.png",
+            "title": "What is Lorem Ipsum?",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "limegreen"
+            }
+          }
+        }
+      ]
+    },
+    "/test/:id/case": {
+      "detectBy": ["test", "case"],
+      "url": "/test/:id/case",
+      "config": {
+        "layout": "default",
+        "middleware": [],
+        "seo": {
+          "title": "Another page",
+          "meta": [
+            {
+              "hid": "description",
+              "name": "description",
+              "content": "My custom description"
+            }
+          ]
+        }
+      },
+      "css": {
+        "styles": {
+          "paddingTop": "30px",
+          "paddingBottom": "30px"
+        }
+      },
+      "structure": [
+        {
+          "component": "PreviewSection",
+          "data": {
+            "backgroundImage": "/img/history/history-preview.jpg",
+            "title": "Another page",
+            "description": "HireQuest Direct, 30 years on. This is our story."
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "limegreen"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

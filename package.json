@@ -1,0 +1,62 @@
+{
+  "name": "nuxt-cms-engine",
+  "version": "1.0.0",
+  "description": "CMS engine for nuxt framework",
+  "keywords": [
+    "nuxt",
+    "cms",
+    "content managment",
+    "nuxt-module"
+  ],
+  "homepage": "https://github.com/exoort/nuxt-cms-engine",
+  "bugs": {
+    "url": "https://github.com/exoort/nuxt-cms-engine/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:exoort/nuxt-cms-engine.git"
+  },
+  "license": "MIT",
+  "author": "Oleksandr Syvash (exoort)",
+  "contributors": [
+    {
+      "name": "exoort <exortwot@gmail.com>"
+    }
+  ],
+  "main": "lib/module.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "types/index.d.ts"
+  ],
+  "scripts": {
+    "dev": "nuxt example",
+    "build-example": "nuxt build example",
+    "start-example": "nuxt start example",
+    "lint": "eslint --ext .js,.vue .",
+    "test": "npm run lint && jest",
+    "release": "standard-version && git push --follow-tags && npm publish"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/eslint-parser": "^7.5.4",
+    "@babel/preset-env": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxt/types": "^2.15.8",
+    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/module-test-utils": "latest",
+    "babel-eslint": "latest",
+    "babel-jest": "latest",
+    "eslint": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "nuxt-edge": "latest",
+    "standard-version": "latest",
+    "@nuxtjs/axios": "^5.13.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
