@@ -1,6 +1,5 @@
 import {Module} from "@nuxt/types";
 
-
 export type ICmsColors = Record<string, string>
 
 export type ICmsEnv = Record<string, any>
@@ -50,7 +49,7 @@ export interface ICmsPage {
 }
 
 export interface ICms {
-  config: Config;
+  config: ICmsConfig;
   pages: Record<string, ICmsPage>;
 }
 
