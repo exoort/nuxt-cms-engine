@@ -17,7 +17,7 @@ export interface ICmsMeta {
 
 export interface ICmsSeo {
   title: string;
-  meta: ICmsMeta;
+  meta: ICmsMeta[];
 }
 
 export type ICmsStyles = Record<string, any>
