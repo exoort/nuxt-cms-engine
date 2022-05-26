@@ -36,7 +36,7 @@ export interface ICmsStructure {
 
 export interface ICmsPageConfig {
   layout: string;
-  middleware: Record<string, Function> | string;
+  middleware: string | string[];
   seo: ICmsSeo;
 }
 
