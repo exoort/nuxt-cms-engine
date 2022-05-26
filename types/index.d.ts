@@ -44,7 +44,7 @@ export interface ICmsPage {
   detectBy: string[];
   url: string;
   config: ICmsPageConfig;
-  css: ICmsConfig;
+  css: ICmsCss;
   structure: ICmsStructure[];
 }
 
