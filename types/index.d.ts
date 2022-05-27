@@ -10,9 +10,10 @@ export interface ICmsConfig {
 }
 
 export interface ICmsMeta {
-  hid: string;
+  hid?: string;
   name: string;
   content: string;
+  property?: string;
 }
 
 export interface ICmsScript {
