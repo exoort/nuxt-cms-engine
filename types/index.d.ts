@@ -15,9 +15,27 @@ export interface ICmsMeta {
   content: string;
 }
 
+export interface ICmsScript {
+  type?: string;
+  json?: {};
+  src?: string;
+  defer?: boolean;
+  async?: boolean;
+}
+
+export interface ICmsLink {
+  hid?: string;
+  rel: string;
+  hreflang?: string;
+  href: string;
+  as?: string;
+}
+
 export interface ICmsSeo {
   title: string;
   meta: ICmsMeta[];
+  script: ICmsScript[];
+  link: ICmsLink[];
 }
 
 export type ICmsStyles = Record<string, any>

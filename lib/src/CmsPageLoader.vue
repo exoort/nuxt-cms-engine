@@ -76,6 +76,9 @@ export default {
       cachedRouteParams: {}
     }
   },
+  head () {
+    return this.seo
+  },
   computed: {
     cmsConfig () {
       return this.$store.getters['cmsEngine/cmsConfig']?.config
