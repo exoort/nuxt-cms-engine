@@ -96,13 +96,13 @@ export default {
       return this.pageConfig?.css || {}
     },
     env () {
-      return this.cmsConfig?.config?.env || {}
+      return this.cmsConfig?.env || {}
     },
     colors () {
-      return this.cmsConfig?.config?.colors || {}
+      return this.cmsConfig?.colors || {}
     },
     seo () {
-      return this.cmsConfig?.config?.seo || {}
+      return this.cmsConfig?.seo || {}
     }
   },
   created () {
