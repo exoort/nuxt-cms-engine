@@ -23,17 +23,16 @@
       "name": "exoort <exortwot@gmail.com>"
     }
   ],
+  "type": "module",
   "main": "lib/module.js",
   "types": "types/index.d.ts",
   "exports": {
-    "./lib": "./lib/index.js",
-    "./package.json": "./package.json"
+    "lib": "./lib/index.js",
+    "package.json": "./package.json"
   },
   "typesVersions": {
     "*": {
-      "lib": [
-        "./lib/index.d.ts"
-      ]
+      "lib": ["lib/index.d.ts"]
     }
   },
   "files": [
