@@ -1,5 +1,5 @@
 import Vue from "vue";
-import {ICms, ICmsPage} from "../types";
+import {ICms, ICmsPage} from "../../types";
 
 export declare class CmsEnginePage extends Vue {
   components: Record<string, any>;

@@ -1,5 +1,5 @@
 <script>
-import { CmsEnginePage } from '../../lib/module.js'
+import { CmsEnginePage } from '../../lib/shared'
 export default {
   name: 'CmsPageWrapper',
   components: {
