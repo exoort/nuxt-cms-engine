@@ -1,6 +1,6 @@
 {
   "name": "nuxt-cms-engine",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "CMS engine for nuxt framework",
   "keywords": [
     "nuxt",
@@ -23,7 +23,7 @@
       "name": "exoort <exortwot@gmail.com>"
     }
   ],
-  "type":"module",
+  "type": "module",
   "main": "lib/module.js",
   "types": "types/index.d.ts",
   "exports": {
