@@ -86,18 +86,6 @@ export interface CmsEngine {
   useCmsLayout: boolean
 }
 
-declare class CmsEnginePage extends Vue {
-  components: Record<string, any>;
-}
-
-declare class CmsEngineUtils {
-  static getPageConfig(url: string, config: string): ICmsPage;
-  static getRouteParams(url: string, cmsUrl: string): Record<string, string>;
-  static getDetectBy(url: string): string[];
-  static getDefaultPage(): ICmsPage;
-  static getDefaultCmsFile(): ICms;
-}
-
 interface ModuleOptions {
   route?: {
     name: string,
@@ -106,6 +94,20 @@ interface ModuleOptions {
 }
 
 type ICacheModule = Module<ModuleOptions>
+
+declare module 'nuxt-cms-engine/lib' {
+  export declare class CmsEnginePage extends Vue {
+    components: Record<string, any>;
+  }
+
+  export declare class CmsEngineUtils {
+    static getPageConfig(url: string, config: string): ICmsPage;
+    static getRouteParams(url: string, cmsUrl: string): Record<string, string>;
+    static getDetectBy(url: string): string[];
+    static getDefaultPage(): ICmsPage;
+    static getDefaultCmsFile(): ICms;
+  }
+}
 
 declare module '@nuxt/vue-app' {
   interface Context {
