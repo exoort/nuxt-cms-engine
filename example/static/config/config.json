@@ -13,7 +13,7 @@
       "detectBy": ["test"],
       "url": "/test/:id",
       "config": {
-        "layout": "testLayout",
+        "layout": "test",
         "middleware": ["testMiddleware"],
         "seo": {
           "title": "Test page",

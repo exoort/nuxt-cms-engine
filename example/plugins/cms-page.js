@@ -1,8 +1,8 @@
-import CmsPage from '../components/CmsPage'
+import CmsPageWrapper from '../components/CmsPageWrapper'
 import testMiddleware from '../middleware/testMiddleware'
 
 export default function ({ $cmsEngine, $axios }) {
-  $cmsEngine.viewer = CmsPage
+  $cmsEngine.viewer = CmsPageWrapper
   $cmsEngine.middlewares = {
     testMiddleware
   }
@@ -12,4 +12,6 @@ export default function ({ $cmsEngine, $axios }) {
       resolve(config)
     }, 500)
   })
+
+  $cmsEngine.useCmsLayout = true
 }

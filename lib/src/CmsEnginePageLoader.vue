@@ -1,5 +1,5 @@
 <script>
-import { getRouteParams } from './utils'
+import CmsEngineUtils from './utils'
 
 async function getPageConfig (context) {
   await context.store.dispatch('cmsEngine/init', context.route.path)
@@ -8,16 +8,24 @@ async function getPageConfig (context) {
 }
 
 function setRouteParams (context, pageConfig) {
-  const params = getRouteParams(context.route.path, pageConfig.url)
+  const params = CmsEngineUtils.getRouteParams(context.route.path, pageConfig.url)
 
   for (const paramsKey in params) {
     context.route.params[paramsKey] = params[paramsKey]
   }
 }
 
+function getLayoutName (store) {
+  const name = store.getters['cmsEngine/useCmsLayout']
+    ? 'cms'
+    : store.getters['cmsEngine/currentPageLayout']
+
+  return name || 'cms'
+}
+
 function setLayoutOnServer (context) {
   if (process.server) {
-    context.ssrContext.nuxt.layout = context.store.getters['cmsEngine/currentPageLayout'] || 'default'
+    context.ssrContext.nuxt.layout = getLayoutName(context.store)
   }
 }
 
@@ -45,9 +53,9 @@ function triggerMiddlewares (context, pageConfig) {
 }
 
 export default {
-  name: 'CmsPageLoader',
+  name: 'CmsEnginePageLoader',
   layout ({ store }) {
-    return store.getters['cmsEngine/currentPageLayout'] || 'default'
+    return getLayoutName(store)
   },
   async middleware (context) {
     const pageConfig = await getPageConfig(context)
@@ -80,29 +88,11 @@ export default {
     return this.seo
   },
   computed: {
-    cmsConfig () {
-      return this.$store.getters['cmsEngine/cmsConfig']?.config
-    },
     pageConfig () {
       return this.$store.getters['cmsEngine/currentPageConfig']
     },
     pageViewer () {
       return this.$cmsEngine.viewer
-    },
-    structure () {
-      return this.pageConfig?.structure || []
-    },
-    css () {
-      return this.pageConfig?.css || {}
-    },
-    env () {
-      return this.cmsConfig?.env || {}
-    },
-    colors () {
-      return this.cmsConfig?.colors || {}
-    },
-    seo () {
-      return this.cmsConfig?.seo || {}
     }
   },
   created () {
@@ -126,9 +116,5 @@ export default {
   <component
     :is="pageViewer"
     v-if="pageConfig && pageViewer"
-    :structure="structure"
-    :env="env"
-    :colors="colors"
-    :css="css"
   />
 </template>

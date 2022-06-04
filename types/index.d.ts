@@ -67,15 +67,22 @@ export interface ICmsPage {
   structure: ICmsStructure[];
 }
 
+export interface ICmsLayout {
+  css: ICmsCss;
+  structure: ICmsStructure[];
+}
+
 export interface ICms {
   config: ICmsConfig;
   pages: Record<string, ICmsPage>;
+  layouts: Record<string, ICmsLayout>;
 }
 
 export interface CmsEngine {
   viewer: any,
   middlewares: Record<string, Function>
   getCmsConfig: (...params: any) => Promise<ICms>
+  useCmsLayout: boolean
 }
 
 interface ModuleOptions {

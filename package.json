@@ -1,6 +1,6 @@
 {
   "name": "nuxt-cms-engine",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "CMS engine for nuxt framework",
   "keywords": [
     "nuxt",
@@ -33,9 +33,10 @@
     "dev": "nuxt example",
     "build-example": "nuxt build example",
     "start-example": "nuxt start example",
-    "lint": "eslint --ext .js,.vue .",
+    "lint": "eslint --fix --ext .js,.vue .",
     "test": "npm run lint && jest",
-    "release": "standard-version && git push --follow-tags && npm publish"
+    "release:bump": "standard-version && npm run release",
+    "release": "git push --follow-tags && npm publish"
   },
   "dependencies": {},
   "devDependencies": {
