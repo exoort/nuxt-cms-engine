@@ -26,17 +26,13 @@
   "main": "lib/module.js",
   "types": "types/index.d.ts",
   "exports": {
-    "./component": "./lib/src/CmsEnginePage.vue",
-    "./utils": "./lib/src/utils.js",
+    "./lib": "./lib/index.js",
     "./package.json": "./package.json"
   },
   "typesVersions": {
     "*": {
-      "component": [
-        "./lib/src/types/component"
-      ],
-      "utils": [
-        "./lib/src/utils"
+      "lib": [
+        "./lib/index.d.ts"
       ]
     }
   },

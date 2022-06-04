@@ -1,4 +1,9 @@
-import {ICms, ICmsPage} from "../../../types";
+import Vue from 'vue'
+
+declare class CmsEnginePage extends Vue {
+  components: Record<string, any>;
+}
+import {ICms, ICmsPage} from "../types";
 
 declare class CmsEngineUtils {
   static getPageConfig(url: string, config: string): ICmsPage;
@@ -8,4 +13,7 @@ declare class CmsEngineUtils {
   static getDefaultCmsFile(): ICms;
 }
 
-export default CmsEngineUtils
+export {
+  CmsEngineUtils,
+  CmsEnginePage
+}
