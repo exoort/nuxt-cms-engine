@@ -25,18 +25,6 @@
   ],
   "main": "lib/module.js",
   "types": "types/index.d.ts",
-  "exports": {
-    ".": "./lib/module.js",
-    "./lib/shared": "./lib/shared/index.js",
-    "./package.json": "./package.json"
-  },
-  "typesVersions": {
-    "*": {
-      "lib/shared": [
-        "lib/shared/index.d.ts"
-      ]
-    }
-  },
   "files": [
     "lib",
     "types/index.d.ts"
