@@ -94,6 +94,23 @@ interface ModuleOptions {
 
 type ICacheModule = Module<ModuleOptions>
 
+declare module 'nuxt-cms-engine/lib/src/CmsEnginePage.vue' {
+  export declare class CmsEnginePage extends Vue {
+    components: Record<string, any>;
+  }
+}
+
+declare module 'nuxt-cms-engine/lib/src/utils' {
+  export declare class CmsEngineUtils {
+    static getPageConfig(url: string, config: string): ICmsPage;
+    static getRouteParams(url: string, cmsUrl: string): Record<string, string>;
+    static getDetectBy(url: string): string[];
+    static getDefaultPage(): ICmsPage;
+    static getDefaultCmsFile(): ICms;
+  }
+
+}
+
 declare module '@nuxt/vue-app' {
   interface Context {
     $cmsEngine: CmsEngine
