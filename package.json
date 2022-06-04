@@ -1,6 +1,6 @@
 {
   "name": "nuxt-cms-engine",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "CMS engine for nuxt framework",
   "keywords": [
     "nuxt",
@@ -32,8 +32,12 @@
   },
   "typesVersions": {
     "*": {
-      "component": ["./lib/src/types/component"],
-      "utils": ["./lib/src/utils"]
+      "component": [
+        "./lib/src/types/component"
+      ],
+      "utils": [
+        "./lib/src/utils"
+      ]
     }
   },
   "files": [
