@@ -23,6 +23,7 @@
       "name": "exoort <exortwot@gmail.com>"
     }
   ],
+  "type":"module",
   "main": "lib/module.js",
   "types": "types/index.d.ts",
   "exports": {
