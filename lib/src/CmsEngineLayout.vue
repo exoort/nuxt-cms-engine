@@ -34,7 +34,7 @@ export default {
       <template v-for="(section, index) in structure">
         <component
           :is="components[section.component]"
-          v-if="section.component !== 'slot'"
+          v-if="section.component !== 'page'"
           :key="`${section.component}-${index}`"
           v-bind="section.data"
           :css="section.css"
