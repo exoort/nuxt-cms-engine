@@ -7,3 +7,5 @@ declare class CmsEngineUtils {
   static getDefaultPage(): ICmsPage;
   static getDefaultCmsFile(): ICms;
 }
+
+export default CmsEngineUtils;
