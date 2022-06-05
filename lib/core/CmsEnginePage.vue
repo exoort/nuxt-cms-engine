@@ -1,9 +1,6 @@
 <script>
-import CmsEngineLayout from './CmsEngineLayout'
+import CmsEngineLayout from '../src/CmsEngineLayout'
 
-/**
- * @type {CmsEnginePage}
- */
 export default {
   name: 'CmsEnginePage',
   components: { CmsEngineLayout },

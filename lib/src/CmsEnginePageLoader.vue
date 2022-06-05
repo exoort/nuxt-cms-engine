@@ -1,5 +1,5 @@
 <script>
-import CmsEngineUtils from './utils'
+import CmsEngineUtils from '../core/utils'
 
 async function getPageConfig (context) {
   await context.store.dispatch('cmsEngine/init', context.route.path)
