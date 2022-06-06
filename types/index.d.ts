@@ -70,6 +70,7 @@ export interface ICmsPage {
 export interface ICmsLayout {
   css: ICmsCss;
   structure: ICmsStructure[];
+  pageContainer: string | null;
 }
 
 export interface ICms {
