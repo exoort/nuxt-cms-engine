@@ -16,25 +16,13 @@ export default {
   },
   computed: {
     cmsConfig () {
-      return this.$store.getters['cmsEngine/cmsConfig']?.config
-    },
-    pageConfig () {
-      return this.$store.getters['cmsEngine/currentPageConfig']
-    },
-    structure () {
-      return this.pageConfig?.structure || []
-    },
-    css () {
-      return this.pageConfig?.css || {}
+      return this.$store.getters['cmsEngine/cmsConfig']
     },
     env () {
-      return this.cmsConfig?.env || {}
+      return this.cmsConfig?.config?.env || {}
     },
     colors () {
-      return this.cmsConfig?.colors || {}
-    },
-    seo () {
-      return this.cmsConfig?.seo || {}
+      return this.cmsConfig?.config?.colors || {}
     },
     layout () {
       return this.$store.getters['cmsEngine/useCmsLayout']
@@ -46,7 +34,8 @@ export default {
         structure: [],
         css: {
           styles: {}
-        }
+        },
+        pageContainer: null
       }
 
       if (!this.cmsConfig?.layouts) {
@@ -54,6 +43,18 @@ export default {
       }
 
       return this.cmsConfig.layouts[this.layout] || fallbackData
+    },
+    pageConfig () {
+      return this.$store.getters['cmsEngine/currentPageConfig']
+    },
+    structure () {
+      return this.pageConfig?.structure || []
+    },
+    css () {
+      return this.pageConfig?.config?.css || {}
+    },
+    seo () {
+      return this.pageConfig?.config?.seo || {}
     },
     pageStyles () {
       const styles = this.css?.styles || {}
@@ -74,6 +75,7 @@ export default {
       :components="components"
       :css="layoutData.css"
       :structure="layoutData.structure"
+      :page-container="layoutData.pageContainer"
     >
       <template v-for="(section, index) in structure">
         <component

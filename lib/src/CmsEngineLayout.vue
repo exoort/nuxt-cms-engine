@@ -13,6 +13,10 @@ export default {
     structure: {
       type: Array,
       default: () => [{}]
+    },
+    pageContainer: {
+      type: String,
+      default: null
     }
   },
   computed: {
@@ -38,7 +42,9 @@ export default {
           :key="`${section.component}-${index}`"
           v-bind="section.data"
           :css="section.css"
-        />
+        >
+          <slot v-if="pageContainer === section.component" />
+        </component>
 
         <slot v-else />
       </template>
