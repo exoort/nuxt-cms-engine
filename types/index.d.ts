@@ -3,8 +3,8 @@ import CmsEngineUtils from "../lib/core/utils";
 
 export type ICmsRoute = string | {
   path: string,
-  params: Record<string, string | number>,
-  query: Record<string, string | string[] | number>
+  params?: Record<string, string | number>,
+  query?: Record<string, string | string[] | number>
 }
 
 export type ICmsColors = Record<string, string>
