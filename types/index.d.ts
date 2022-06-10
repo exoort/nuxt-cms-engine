@@ -1,4 +1,11 @@
 import {Module} from "@nuxt/types";
+import CmsEngineUtils from "../lib/core/utils";
+
+export type ICmsRoute = string | {
+  path: string,
+  params: Record<string, string | number>,
+  query: Record<string, string | string[] | number>
+}
 
 export type ICmsColors = Record<string, string>
 
@@ -101,15 +108,17 @@ declare module 'lib/core/CmsEnginePage.vue' {
   }
 }
 
-
+type CmsUrl = typeof CmsEngineUtils.prototype.toUrl
 
 declare module '@nuxt/vue-app' {
   interface Context {
     $cmsEngine: CmsEngine
+    $cmsUrl: CmsUrl
   }
 
   interface NuxtAppOptions {
     $cmsEngine: CmsEngine
+    $cmsUrl: CmsUrl
   }
 }
 
@@ -117,21 +126,25 @@ declare module '@nuxt/vue-app' {
 declare module '@nuxt/types' {
   interface Context {
     $cmsEngine: CmsEngine
+    $cmsUrl: CmsUrl
   }
 
   interface NuxtAppOptions {
     $cmsEngine: CmsEngine
+    $cmsUrl: CmsUrl
   }
 }
 
 declare module 'vue/types/vue' {
   interface Vue {
     $cmsEngine: CmsEngine
+    $cmsUrl: CmsUrl
   }
 }
 
 declare module 'vuex/types/index' {
   interface Store<S> {
     $cmsEngine: CmsEngine
+    $cmsUrl: CmsUrl
   }
 }

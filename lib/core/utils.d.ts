@@ -1,4 +1,4 @@
-import {ICms, ICmsLayout, ICmsPage} from "../../types";
+import {ICms, ICmsLayout, ICmsPage, ICmsRoute, ICmsStructure} from "../../types";
 
 declare class CmsEngineUtils {
   static getPageConfig(url: string, config: string): ICmsPage;
@@ -7,6 +7,8 @@ declare class CmsEngineUtils {
   static getDefaultPage(): ICmsPage;
   static getDefaultCmsFile(): ICms;
   static getDefaultCmsLayout (): ICmsLayout;
+  static getDefaultCmsStructure (): ICmsStructure;
+  static toUrl (url: ICmsRoute): string
 }
 
 export default CmsEngineUtils;
