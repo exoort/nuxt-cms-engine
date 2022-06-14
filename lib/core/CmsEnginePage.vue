@@ -80,6 +80,7 @@ export default {
       v-if="layout"
       :components="components"
       :css="layoutData.css"
+      :env="env"
       :structure="layoutData.structure"
       :page-container="layoutData.pageContainer"
       :page-name="pageName"
