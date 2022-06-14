@@ -82,6 +82,7 @@ export default {
           :is="components[section.component]"
           :key="`${section.component}-${index}`"
           v-bind="section.data"
+          :env="env"
           :css="section.css"
         />
       </template>
@@ -93,6 +94,7 @@ export default {
         v-for="(section, index) in structure"
         :key="`${section.component}-${index}`"
         v-bind="section.data"
+        :env="env"
         :css="section.css"
       />
     </template>

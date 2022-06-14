@@ -17,7 +17,11 @@ export default {
     pageContainer: {
       type: String,
       default: null
-    }
+    },
+    env: {
+      type: Object,
+      default: () => ({})
+    },
   },
   computed: {
     styles () {
@@ -41,6 +45,7 @@ export default {
           v-if="section.component !== 'page'"
           :key="`${section.component}-${index}`"
           v-bind="section.data"
+          :env="env"
           :css="section.css"
         >
           <slot v-if="pageContainer === section.component" />
