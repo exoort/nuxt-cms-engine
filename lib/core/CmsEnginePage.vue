@@ -47,6 +47,12 @@ export default {
     pageConfig () {
       return this.$store.getters['cmsEngine/currentPageConfig']
     },
+    pageName () {
+      return this.pageConfig?.url || ''
+    },
+    detectBy () {
+      return this.pageConfig?.detectBy || []
+    },
     structure () {
       return this.pageConfig?.structure || []
     },
@@ -76,6 +82,8 @@ export default {
       :css="layoutData.css"
       :structure="layoutData.structure"
       :page-container="layoutData.pageContainer"
+      :page-name="pageName"
+      :detect-by="detectBy"
     >
       <template v-for="(section, index) in structure">
         <component
@@ -84,6 +92,8 @@ export default {
           v-bind="section.data"
           :env="env"
           :css="section.css"
+          :page-name="pageName"
+          :detect-by="detectBy"
         />
       </template>
     </CmsEngineLayout>
@@ -96,6 +106,8 @@ export default {
         v-bind="section.data"
         :env="env"
         :css="section.css"
+        :page-name="pageName"
+        :detect-by="detectBy"
       />
     </template>
   </div>

@@ -1,8 +1,6 @@
 # Common
 node_modules
-dist
-.nuxt
+example/dist
+example/.nuxt
 coverage
-
-# Plugin
-lib/plugin.js
+.github

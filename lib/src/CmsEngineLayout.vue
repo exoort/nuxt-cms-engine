@@ -22,6 +22,14 @@ export default {
       type: Object,
       default: () => ({})
     },
+    pageName: {
+      type: String,
+      default: ''
+    },
+    detectBy: {
+      type: Array,
+      default: () => []
+    }
   },
   computed: {
     styles () {
@@ -47,6 +55,8 @@ export default {
           v-bind="section.data"
           :env="env"
           :css="section.css"
+          :page-name="pageName"
+          :detect-by="detectBy"
         >
           <slot v-if="pageContainer === section.component" />
         </component>
