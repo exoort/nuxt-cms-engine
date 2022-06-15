@@ -84,6 +84,9 @@ export default {
       cachedRouteParams: {}
     }
   },
+  fetch () {
+    this.regenerateRouteParams()
+  },
   head () {
     return this.seo
   },
@@ -94,9 +97,6 @@ export default {
     pageViewer () {
       return this.$cmsEngine.viewer
     }
-  },
-  created () {
-    this.regenerateRouteParams()
   },
   methods: {
     regenerateRouteParams () {
