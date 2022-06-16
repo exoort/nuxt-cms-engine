@@ -2,10 +2,6 @@
 export default {
   name: 'CmsEngineLayout',
   props: {
-    components: {
-      type: Object,
-      default: () => ({})
-    },
     css: {
       type: Object,
       default: () => ({})
@@ -49,7 +45,7 @@ export default {
     <template v-else>
       <template v-for="(section, index) in structure">
         <component
-          :is="components[section.component]"
+          :is="section.component"
           v-if="section.component !== 'page'"
           :key="`${section.component}-${index}`"
           v-bind="section.data"
