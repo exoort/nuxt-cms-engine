@@ -1,5 +1,6 @@
 <script>
 import CmsEngineUtils from '../core/utils'
+import CmsEnginePage from '../core/CmsEnginePage'
 
 async function getPageConfig (context) {
   await context.store.dispatch('cmsEngine/init', context.route.path)
@@ -54,6 +55,7 @@ function triggerMiddlewares (context, pageConfig) {
 
 export default {
   name: 'CmsEnginePageLoader',
+  components: { CmsEnginePage },
   layout ({ store }) {
     return getLayoutName(store)
   },
@@ -90,9 +92,6 @@ export default {
   computed: {
     pageConfig () {
       return this.$store.getters['cmsEngine/currentPageConfig']
-    },
-    pageViewer () {
-      return this.$cmsEngine.viewer
     }
   },
   created () {
@@ -113,8 +112,5 @@ export default {
 </script>
 
 <template>
-  <component
-    :is="pageViewer"
-    v-if="pageConfig && pageViewer"
-  />
+  <CmsEnginePage v-if="pageConfig" />
 </template>

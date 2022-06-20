@@ -4,12 +4,6 @@ import CmsEngineLayout from '../src/CmsEngineLayout'
 export default {
   name: 'CmsEnginePage',
   components: { CmsEngineLayout },
-  props: {
-    styles: {
-      type: Object,
-      default: () => ({})
-    }
-  },
   computed: {
     cmsConfig () {
       return this.$store.getters['cmsEngine/cmsConfig']
@@ -62,8 +56,7 @@ export default {
       const styles = this.css?.styles || {}
       return {
         ...styles,
-        ...this.colors,
-        ...this.styles
+        ...this.colors
       }
     }
   }
