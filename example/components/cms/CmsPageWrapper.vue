@@ -1,10 +1,6 @@
 <script>
-import CmsEnginePage from '../../lib/core/CmsEnginePage'
 export default {
   name: 'CmsPageWrapper',
-  components: {
-    CmsEnginePage
-  },
   fetch () {
     console.log('fetch page viewer')
   }
@@ -12,5 +8,7 @@ export default {
 </script>
 
 <template>
-  <CmsEnginePage />
+  <div>
+    <slot />
+  </div>
 </template>

@@ -87,7 +87,7 @@ export interface ICms {
 }
 
 export interface CmsEngine {
-  viewer: any,
+  pageWrapper: string | null,
   middlewares: Record<string, Function>
   getCmsConfig: (...params: any) => Promise<ICms>
   useCmsLayout: boolean
@@ -102,7 +102,7 @@ interface ModuleOptions {
 
 type ICacheModule = Module<ModuleOptions>
 
-declare module 'lib/core/CmsEnginePage.vue' {
+declare module 'lib/src/CmsEnginePage.vue' {
   export declare class CmsEnginePage extends Vue {
     components: Record<string, any>;
   }

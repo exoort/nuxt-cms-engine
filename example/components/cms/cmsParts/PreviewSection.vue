@@ -1,5 +1,5 @@
 <script>
-import CommonComponent from '../common/CommonComponent'
+import CommonComponent from '../../common/CommonComponent'
 export default {
   name: 'PreviewSection',
   components: { CommonComponent },

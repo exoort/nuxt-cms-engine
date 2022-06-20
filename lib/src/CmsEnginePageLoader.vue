@@ -1,6 +1,6 @@
 <script>
 import CmsEngineUtils from '../core/utils'
-import CmsEnginePage from '../core/CmsEnginePage'
+import CmsEnginePage from './CmsEnginePage'
 
 async function getPageConfig (context) {
   await context.store.dispatch('cmsEngine/init', context.route.path)
@@ -93,11 +93,6 @@ export default {
   head () {
     return this.seo
   },
-  computed: {
-    pageViewer () {
-      return this.$cmsEngine.viewer
-    }
-  },
   created () {
     this.regenerateRouteParams()
   },
@@ -116,14 +111,8 @@ export default {
 </script>
 
 <template>
-  <component
-    :is="pageViewer"
-    v-if="pageConfig && pageViewer"
-    :key="viewerKey"
-  />
-
   <CmsEnginePage
-    v-else-if="pageConfig"
+    v-if="pageConfig"
     :key="viewerKey"
   />
 </template>

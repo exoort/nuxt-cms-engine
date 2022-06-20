@@ -16,7 +16,8 @@ module.exports = {
   buildDir: resolve(__dirname, '.nuxt'),
   srcDir: __dirname,
   components: [
-    '~/components/cmsParts'
+    '~/components/cms',
+    '~/components/cms/cmsParts'
   ],
   router: {
     prefetchLinks: false

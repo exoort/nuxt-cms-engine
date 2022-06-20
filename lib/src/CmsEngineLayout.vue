@@ -8,7 +8,7 @@ export default {
     },
     structure: {
       type: Array,
-      default: () => [{}]
+      default: () => []
     },
     pageContainer: {
       type: String,
