@@ -77,7 +77,7 @@
           "data": {
             "backgroundImage": "/img/history/history-preview.jpg",
             "title": "Another page",
-            "description": "HireQuest Direct, 30 years on. This is our story."
+            "description": "Another description"
           },
           "css": {
             "styles": {
