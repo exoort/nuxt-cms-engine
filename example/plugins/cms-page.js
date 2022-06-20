@@ -1,6 +1,8 @@
+import CmsPageWrapper from '../components/CmsPageWrapper'
 import testMiddleware from '../middleware/testMiddleware'
 
 export default function ({ $cmsEngine, $axios }) {
+  $cmsEngine.viewer = CmsPageWrapper
   $cmsEngine.middlewares = {
     testMiddleware
   }

@@ -87,6 +87,7 @@ export interface ICms {
 }
 
 export interface CmsEngine {
+  viewer: any,
   middlewares: Record<string, Function>
   getCmsConfig: (...params: any) => Promise<ICms>
   useCmsLayout: boolean

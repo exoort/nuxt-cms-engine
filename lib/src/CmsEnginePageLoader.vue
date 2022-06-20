@@ -78,20 +78,24 @@ export default {
   },
   asyncData (context) {
     return {
-      cachedRouteParams: process.server ? context.route.params : {}
+      cachedRouteParams: process.server ? context.route.params : {},
+      pageConfig: context.store.getters['cmsEngine/currentPageConfig'],
+      viewerKey: context.route.path
     }
   },
   data () {
     return {
-      cachedRouteParams: {}
+      cachedRouteParams: {},
+      pageConfig: null,
+      viewerKey: null
     }
   },
   head () {
     return this.seo
   },
   computed: {
-    pageConfig () {
-      return this.$store.getters['cmsEngine/currentPageConfig']
+    pageViewer () {
+      return this.$cmsEngine.viewer
     }
   },
   created () {
@@ -112,5 +116,14 @@ export default {
 </script>
 
 <template>
-  <CmsEnginePage v-if="pageConfig" />
+  <component
+    :is="pageViewer"
+    v-if="pageConfig && pageViewer"
+    :key="viewerKey"
+  />
+
+  <CmsEnginePage
+    v-else-if="pageConfig"
+    :key="viewerKey"
+  />
 </template>

@@ -1,6 +1,8 @@
 <script>
+import CommonComponent from '../common/CommonComponent'
 export default {
   name: 'PreviewSection',
+  components: { CommonComponent },
   props: {
     title: {
       type: String,
@@ -44,5 +46,7 @@ export default {
     <nuxt-link to="/test/321/case">
       Test link
     </nuxt-link>
+
+    <CommonComponent />
   </div>
 </template>
