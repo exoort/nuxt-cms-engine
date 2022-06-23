@@ -64,6 +64,7 @@ export interface ICmsPageConfig {
   layout: string;
   middleware: string | string[];
   seo: ICmsSeo;
+  entities: string[];
 }
 
 export interface ICmsPage {
