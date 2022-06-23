@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/exoort/nuxt-cms-engine/compare/v3.0.0...v3.0.1) (2022-06-23)
+
 ### [2.3.1](https://github.com/exoort/nuxt-cms-engine/compare/v2.2.1...v2.3.1) (2022-06-20)
 
 ### [2.2.1](https://github.com/exoort/nuxt-cms-engine/compare/v2.1.6...v2.2.1) (2022-06-20)
