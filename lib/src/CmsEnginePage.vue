@@ -19,7 +19,7 @@ export default {
       ? this.$store.getters['cmsEngine/currentPageLayout']
       : null
 
-    this.pageViewer = this.$cmsEngine.viewer
+    this.pageViewer = this.$cmsEngine.pageWrapper
 
     this.pageConfig = this.$store.getters['cmsEngine/currentPageConfig']
   },
