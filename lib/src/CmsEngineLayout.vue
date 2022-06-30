@@ -25,6 +25,10 @@ export default {
     detectBy: {
       type: Array,
       default: () => []
+    },
+    entities: {
+      type: [String, Array],
+      default: ''
     }
   },
   computed: {
@@ -53,6 +57,7 @@ export default {
           :css="section.css"
           :page-name="pageName"
           :detect-by="detectBy"
+          :entities="entities"
         >
           <slot v-if="pageContainer === section.component" />
         </component>

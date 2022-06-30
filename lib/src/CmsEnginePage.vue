@@ -66,6 +66,9 @@ export default {
         ...styles,
         ...this.colors
       }
+    },
+    entities () {
+      return this.pageConfig?.config?.entities
     }
   }
 }
@@ -85,6 +88,7 @@ export default {
         :page-container="layoutData.pageContainer"
         :page-name="pageName"
         :detect-by="detectBy"
+        :entities="entities"
       >
         <template v-for="(section, index) in structure">
           <component
@@ -95,6 +99,7 @@ export default {
             :css="section.css"
             :page-name="pageName"
             :detect-by="detectBy"
+            :entities="entities"
           />
         </template>
       </CmsEngineLayout>
