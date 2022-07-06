@@ -79,6 +79,9 @@ export default {
     <component
       :is="pageViewer"
       v-if="pageViewer"
+      :env="env"
+      :page-name="pageName"
+      :entities="entities"
     >
       <CmsEngineLayout
         v-if="layout"
