@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.1](https://github.com/exoort/nuxt-cms-engine/compare/v3.3.0...v3.3.1) (2022-07-07)
+
+
+### Bug Fixes
+
+* fixed 404 error render ([58a1c37](https://github.com/exoort/nuxt-cms-engine/commit/58a1c37f9ce93acd93251ca2a7d232c3c8951884))
+
 ### [3.2.1](https://github.com/exoort/nuxt-cms-engine/compare/v3.2.0...v3.2.1) (2022-06-30)
 
 ### [3.1.3](https://github.com/exoort/nuxt-cms-engine/compare/v3.1.2...v3.1.3) (2022-06-28)
