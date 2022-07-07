@@ -63,11 +63,9 @@ export default {
     const pageConfig = await getPageConfig(context)
 
     if (!pageConfig) {
-      context.error({
+      return context.error({
         statusCode: 404
       })
-
-      return false
     }
 
     setRouteParams(context, pageConfig)

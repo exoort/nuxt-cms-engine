@@ -9,6 +9,45 @@
     }
   },
   "pages": {
+    "/": {
+      "detectBy": [],
+      "url": "/",
+      "config": {
+        "layout": "default",
+        "middleware": [],
+        "seo": {
+          "title": "Test page",
+          "meta": [
+            {
+              "hid": "description",
+              "name": "description",
+              "content": "My custom description"
+            }
+          ]
+        }
+      },
+      "css": {
+        "styles": {
+          "paddingTop": "30px",
+          "paddingBottom": "30px"
+        }
+      },
+      "structure": [
+        {
+          "component": "PreviewSection",
+          "data": {
+            "backgroundImage": "https://gorilasoftware.com.br/wp-content/uploads/2021/11/Lorem-Ipsum-768x492-1.png",
+            "title": "Home page",
+            "description": "Home page: Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "blue"
+            }
+          }
+        }
+      ]
+    },
     "/test/:id": {
       "detectBy": ["test"],
       "url": "/test/:id",
@@ -86,6 +125,23 @@
           }
         }
       ]
+    }
+  },
+  "layouts": {
+    "default": {
+      "css": {
+        "styles": {}
+      },
+      "structure": [
+        {
+          "component": "page",
+          "data": {},
+          "css": {
+            "styles": {}
+          }
+        }
+      ],
+      "pageContainer": null
     }
   }
 }
