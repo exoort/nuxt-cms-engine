@@ -82,6 +82,7 @@ export default {
       :env="env"
       :page-name="pageName"
       :entities="entities"
+      :seo="seo"
     >
       <CmsEngineLayout
         v-if="layout"
