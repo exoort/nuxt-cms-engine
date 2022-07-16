@@ -69,6 +69,7 @@ export interface ICmsPageConfig {
 
 export interface ICmsPage {
   detectBy: string[];
+  fullUrlParts: string[];
   url: string;
   config: ICmsPageConfig;
   css: ICmsCss;

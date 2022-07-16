@@ -11,6 +11,7 @@
   "pages": {
     "/": {
       "detectBy": [],
+      "fullUrlParts": [],
       "url": "/",
       "config": {
         "layout": "default",
@@ -50,6 +51,9 @@
     },
     "/test/:id": {
       "detectBy": ["test"],
+      "fullUrlParts": [
+        "test", ""
+      ],
       "url": "/test/:id",
       "config": {
         "layout": "test",
@@ -89,6 +93,7 @@
     },
     "/test/:id/case": {
       "detectBy": ["test", "case"],
+      "fullUrlParts": ["test", "", "case"],
       "url": "/test/:id/case",
       "config": {
         "layout": "default",
