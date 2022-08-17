@@ -46,16 +46,18 @@
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@nuxt/types": "^2.15.8",
+    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
     "babel-jest": "latest",
+    "core-js": "^3.24.0",
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
-    "nuxt-edge": "latest",
+    "nuxt": "2.15.8",
     "standard-version": "latest",
-    "@nuxtjs/axios": "^5.13.6"
+    "ufo": "^0.8.5"
   },
   "publishConfig": {
     "access": "public"

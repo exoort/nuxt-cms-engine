@@ -35,7 +35,46 @@
       },
       "structure": [
         {
-          "component": "PreviewSection",
+          "component": "CmsPreviewSection",
+          "data": {
+            "backgroundImage": "https://gorilasoftware.com.br/wp-content/uploads/2021/11/Lorem-Ipsum-768x492-1.png",
+            "title": "Home page",
+            "description": "Home page: Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "blue"
+            }
+          }
+        },
+        {
+          "component": "CmsPreviewSection",
+          "data": {
+            "backgroundImage": "https://gorilasoftware.com.br/wp-content/uploads/2021/11/Lorem-Ipsum-768x492-1.png",
+            "title": "Home page",
+            "description": "Home page: Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "blue"
+            }
+          }
+        },
+        {
+          "component": "CmsPreviewSection",
+          "data": {
+            "backgroundImage": "https://gorilasoftware.com.br/wp-content/uploads/2021/11/Lorem-Ipsum-768x492-1.png",
+            "title": "Home page",
+            "description": "Home page: Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "blue"
+            }
+          }
+        },
+        {
+          "component": "CmsPreviewSection",
           "data": {
             "backgroundImage": "https://gorilasoftware.com.br/wp-content/uploads/2021/11/Lorem-Ipsum-768x492-1.png",
             "title": "Home page",
@@ -77,7 +116,7 @@
       },
       "structure": [
         {
-          "component": "PreviewSection",
+          "component": "CmsPreviewSection",
           "data": {
             "backgroundImage": "https://gorilasoftware.com.br/wp-content/uploads/2021/11/Lorem-Ipsum-768x492-1.png",
             "title": "What is Lorem Ipsum?",
@@ -117,10 +156,130 @@
       },
       "structure": [
         {
-          "component": "PreviewSection",
+          "component": "CmsPreviewSection",
           "data": {
             "backgroundImage": "/img/history/history-preview.jpg",
             "title": "Another page",
+            "description": "Another description"
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "limegreen"
+            }
+          }
+        }
+      ]
+    },
+    "/test/:slug/:id": {
+      "detectBy": ["test"],
+      "fullUrlParts": ["test", "", ""],
+      "url": "/test/:slug/:id",
+      "config": {
+        "layout": "default",
+        "middleware": [],
+        "seo": {
+          "title": "/test/:slug/:id",
+          "meta": [
+            {
+              "hid": "description",
+              "name": "description",
+              "content": "My custom description"
+            }
+          ]
+        }
+      },
+      "css": {
+        "styles": {
+          "paddingTop": "30px",
+          "paddingBottom": "30px"
+        }
+      },
+      "structure": [
+        {
+          "component": "CmsPreviewSection",
+          "data": {
+            "backgroundImage": "/img/history/history-preview.jpg",
+            "title": "/test/:slug/:id",
+            "description": "Another description"
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "limegreen"
+            }
+          }
+        }
+      ]
+    },
+    "/test/anotherPage/:id": {
+      "detectBy": ["test", "anotherPage"],
+      "fullUrlParts": ["test", "anotherPage", ""],
+      "url": "/test/anotherPage/:id",
+      "config": {
+        "layout": "default",
+        "middleware": [],
+        "seo": {
+          "title": "/test/page/:id",
+          "meta": [
+            {
+              "hid": "description",
+              "name": "description",
+              "content": "My custom description"
+            }
+          ]
+        }
+      },
+      "css": {
+        "styles": {
+          "paddingTop": "30px",
+          "paddingBottom": "30px"
+        }
+      },
+      "structure": [
+        {
+          "component": "CmsPreviewSection",
+          "data": {
+            "backgroundImage": "/img/history/history-preview.jpg",
+            "title": "/test/anotherPage/:id",
+            "description": "Another description"
+          },
+          "css": {
+            "styles": {
+              "backgroundColor": "limegreen"
+            }
+          }
+        }
+      ]
+    },
+    "/test/page/:id": {
+      "detectBy": ["test", "page"],
+      "fullUrlParts": ["test", "page", ""],
+      "url": "/test/page/:id",
+      "config": {
+        "layout": "default",
+        "middleware": [],
+        "seo": {
+          "title": "/test/page/:id",
+          "meta": [
+            {
+              "hid": "description",
+              "name": "description",
+              "content": "My custom description"
+            }
+          ]
+        }
+      },
+      "css": {
+        "styles": {
+          "paddingTop": "30px",
+          "paddingBottom": "30px"
+        }
+      },
+      "structure": [
+        {
+          "component": "CmsPreviewSection",
+          "data": {
+            "backgroundImage": "/img/history/history-preview.jpg",
+            "title": "/test/page/:id",
             "description": "Another description"
           },
           "css": {

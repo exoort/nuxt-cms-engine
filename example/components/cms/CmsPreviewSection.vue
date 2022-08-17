@@ -1,5 +1,5 @@
 <script>
-import CommonComponent from '../../common/CommonComponent'
+import CommonComponent from '../common/CommonComponent'
 export default {
   name: 'PreviewSection',
   components: { CommonComponent },
@@ -25,9 +25,22 @@ export default {
       default: () => ({})
     }
   },
+  data () {
+    return {
+      testData: null
+    }
+  },
+  async fetch () {
+    await this.getTestData()
+  },
   computed: {
     styles () {
       return this.css?.styles
+    }
+  },
+  methods: {
+    async getTestData () {
+      this.testData = await this.$axios.$get('https://jsonplaceholder.typicode.com/users')
     }
   }
 }
